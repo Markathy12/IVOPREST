@@ -1,0 +1,453 @@
+/* Styles généraux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  background-color: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+/* Sidenav menu */
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: -250px;
+  background-color: white;
+  padding-top: 60px;
+  transition: right 0.5s ease;
+}
+
+/* Sidenav menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #ff6600;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidenav ul .active {
+  color: #ff6600;
+}
+
+/* Active class */
+.sidenav.active {
+  right: 0;
+}
+
+/* Close btn */
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+}
+
+/* Icône burger */
+.burger-icon span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: gray;
+  margin: 6px 0;
+}
+
+/* Topbar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border: none; /* Supprimer toute bordure */
+  box-shadow: none; /* Supprimer l'ombre */
+}
+
+/* Logo */
+.top-bar .logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Topbar noire au défilement */
+.top-bar.scrolled {
+  background-color: #000;
+}
+
+
+/* Section bannière */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+/* Titre sur le banner */
+.banner-title {
+  position: absolute;
+  left: 10%; /* Titre positionné à gauche */
+  top: 50%; /* Alignement vertical centré */
+  transform: translateY(-50%); /* Centre le texte verticalement */
+  color: white; /* Bleu ciel */
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Animation fade-in lors du chargement */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Déplacement léger du bas vers le haut */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section présentation */
+.presentation-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 1.5s ease-in-out; /* Animation au chargement */
+}
+
+/* Titre "Notre Mission" */
+.presentation-section h1 {
+  font-size: 3rem;
+  color: #1e90ff; /* Bleu ciel */
+  margin-bottom: 20px;
+}
+
+/* Texte de la présentation */
+.presentation-section p {
+  max-width: 800px; /* Limite la largeur du texte pour une bonne lisibilité */
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+/* Section contenant uniquement l'image */
+.full-image-section {
+  width: 100%; /* Prend toute la largeur de la page */
+  height: 100vh; /* Prend toute la hauteur de l'écran */
+  overflow: hidden; /* Empêche tout dépassement de contenu */
+  display: flex;
+  align-items: center; /* Centrage vertical de l'image */
+  justify-content: center; /* Centrage horizontal */
+  background-color: #ebdfd8;
+}
+
+/* Image qui remplit la section tout en gardant le ratio */
+.full-image-section img {
+  width: auto; /* Prend toute la largeur de la section */
+  height: auto; /* Maintient le ratio de l'image */
+  object-fit: contain; /* Couvre la section sans déformer l'image */
+}
+.image-section-second {
+  width: 100%; /* Prend toute la largeur de la page */
+  height: 80vh; /* Prend toute la hauteur de l'écran */
+  overflow: hidden; /* Empêche tout dépassement de contenu */
+  display: flex;
+  align-items: center; /* Centrage vertical de l'image */
+  justify-content: center; /* Centrage horizontal */
+  background-color: transparent;
+}
+.image-section-second img {
+  width: 2000px; /* Prend toute la largeur de la section */
+  height: auto; /* Maintient le ratio de l'image */
+  object-fit: contain; /* Couvre la section sans déformer l'image */
+}
+
+/* Section globale */
+.services-section {
+  margin: 50px auto;
+  width: 80%; /* Ajuste la largeur de la section */
+  text-align: left;
+}
+
+/* Titre principal */
+.services-section h2 {
+  color: #1e90ff; /* Bleu ciel */
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* Liste ordonnée */
+.services-section ol {
+  counter-reset: section-counter; /* Compteur personnalisé */
+}
+
+/* Titres des services */
+.service-title {
+  color: green;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Liste ordonnée : style des numéros */
+.services-section ol > li {
+  counter-increment: section-counter;
+  margin-bottom: 60px;
+}
+
+.services-section ol > li::marker {
+  content: counter(section-counter) ". ";
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: green;
+}
+
+/* Sous-listes */
+.services-section ul {
+  list-style-type: disc;
+  padding-left: 40px; /* Espacement par rapport au titre */
+  margin-top: 25px;
+}
+
+.services-section ul li {
+  font-size: 1.1rem; /* Agrandissement des puces */
+  line-height: 1.8;
+  margin-bottom: 8px; /* Espacement entre les puces */
+}
+
+/* Section principale */
+.problem-solving-section {
+  margin: 50px auto;
+  width: 80%;
+  text-align: center;
+}
+
+/* Titre principal */
+.problem-solving-section h2 {
+  color: #1e90ff; /* Bleu ciel */
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Texte justifié */
+.problem-solving-section p {
+  text-align: justify;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Liste des solutions alignée à gauche */
+.solutions-list {
+  list-style-type: disc;
+  text-align: left;
+  margin-top: 20px;
+  padding-left: 40px; /* Indentation de la liste */
+}
+
+/* Style des puces */
+.solutions-list li {
+  color: green;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Section principale */
+.why-choose-section {
+  margin: 50px auto;
+  width: 80%;
+  text-align: left; /* Alignement à gauche */
+}
+
+/* Titre principal */
+.why-choose-section h2 {
+  color: #1e90ff; /* Bleu ciel */
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Liste formatée */
+.why-choose-list {
+  list-style-type: disc;
+  padding-left: 40px; /* Indentation des puces */
+}
+
+/* Style des éléments de liste */
+.why-choose-list li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px; /* Espacement entre les puces */
+}
+
+/* Section principale */
+#nos-references {
+  width: 100%;
+  margin: 50px 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  animation: fadeIn 1.5s ease-in-out; /* Animation au chargement */
+}
+
+/* Contenu avec le titre aligné à gauche */
+.references-content {
+  width: 100%;
+}
+
+.references-content h2 {
+  font-size: 48px;
+  color: #87ceeb; /* Bleu ciel */
+  margin-left: 20px;
+  text-align: center; /* Alignement à gauche */
+}
+
+/* Image centrée et redimensionnée */
+.references-image {
+  display: flex;
+  justify-content: center;
+}
+
+.references-image img {
+  width: 80%; /* Réduction à 80% */
+  max-width: 800px;
+  height: 400px;
+  border-radius: 8px; /* Coins arrondis */
+}
+
+/* Style général du footer */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-around; /* Espacement égal entre les colonnes */
+  align-items: flex-start; /* Aligne les éléments en haut */
+  text-align: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Adaptation aux petits écrans */
+  animation: fadeIn 1.5s ease-in-out; /* Animation au chargement */
+}
+
+/* Colonnes du footer avec même taille */
+.footer-column {
+  flex: 1;
+  max-width: 300px;
+  min-width: 250px; /* Garde une taille minimale cohérente */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre le contenu horizontalement */
+}
+
+/* Uniformisation des titres */
+.footer-column h3 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #f39c12; /* Couleur orange */
+  border-bottom: 2px solid #f39c12; /* Ligne orange sous le titre */
+  width: 80%; /* Largeur uniforme pour tous les titres */
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* Liste de liens */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Occupe toute la largeur de la colonne */
+  text-align: center;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #f39c12; /* Couleur au survol */
+}
+
+/* Liens sociaux */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-links li {
+  display: inline;
+}
+
+.social-links a {
+  font-size: 16px;
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center; /* Centre les colonnes sur mobile */
+  }
+
+  .footer-column {
+    margin: 10px 0;
+  }
+}

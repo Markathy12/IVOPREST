@@ -1,0 +1,490 @@
+/* Styles généraux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  flex: 1;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  background-color: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Sidenav menu */
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: -250px;
+  background-color: white;
+  padding-top: 60px;
+  transition: right 0.5s ease;
+}
+
+/* Sidenav menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #ff6600;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidenav ul .active {
+  color: #ff6600;
+}
+
+/* Active class */
+.sidenav.active {
+  right: 0;
+}
+
+/* Close btn */
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+}
+
+/* Icône burger */
+.burger-icon span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: gray;
+  margin: 6px 0;
+}
+
+/* Topbar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border: none; /* Supprimer toute bordure */
+  box-shadow: none; /* Supprimer l'ombre */
+}
+
+/* Logo */
+.top-bar .logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Topbar noire au défilement */
+.top-bar.scrolled {
+  background-color: #000;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("background.jpg") no-repeat center center/cover;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Section bannière */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+/* Section du titre */
+.title-section {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#animated-title {
+  color: #ff6600;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideIn 1.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section de la bannière */
+.banner-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f7f7f7;
+}
+
+.image-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.carousel-container {
+  flex: 1;
+  width: 10%;
+  max-width: 600px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.carousel-container img {
+  width: 10%;
+  height: 10%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.full-width-image {
+  width: 100%;
+  overflow: hidden; /* Pour s'assurer que l'image ne dépasse pas */
+}
+
+.full-width-image img {
+  width: 100%; /* Prend toute la largeur */
+  height: auto; /* Ajuste la hauteur pour conserver le ratio */
+  display: block; /* Évite les espaces en dessous de l'image */
+}
+
+.expertise-section {
+  padding: 20px; /* Ajustez l'espacement selon vos préférences */
+  margin-top: 40px; /* Espace entre la section précédente et celle-ci */
+  padding-top: 20px; /* Espace à l'intérieur de la section */
+}
+
+.expertise-section h2 {
+  text-align: center; /* Centre le titre */
+  margin-bottom: 20px; /* Espacement sous le titre */
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff6600; /* Exemple de couleur verte */
+  text-transform: uppercase;
+}
+
+.expertise-container-image {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  padding: 20px;
+}
+.expertise-item {
+  text-align: center;
+}
+
+.expertise-item h3 {
+  color: #87ceeb; /* Code pour le bleu ciel */
+  margin-bottom: 15px; /* Espace sous le titre */
+  padding: 0 15px; /* Retrait horizontal pour éloigner le texte des bordures */
+}
+
+.expertise-item img {
+  max-width: 450px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expertise-item img:hover {
+  transform: scale(1.1); /* Agrandit légèrement l'image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ajoute une ombre */
+}
+
+.learn-more {
+  display: inline-block;
+  margin-top: 0px; /* Espacement au-dessus du bouton */
+  padding: 5px 10px; /* Espacement à l'intérieur du bouton */
+  background-color: green; /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte du bouton */
+  text-decoration: none; /* Supprime le soulignement */
+  border-radius: 5px; /* Coins arrondis du bouton */
+}
+
+.learn-more:hover {
+  background-color: darkgreen; /* Change la couleur au survol */
+}
+
+/* Section principale */
+#nos-references {
+  width: 100%;
+  margin: 50px 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+}
+
+/* Contenu avec le titre aligné à gauche */
+.references-content {
+  width: 100%;
+}
+
+.references-content h2 {
+  font-size: 48px;
+  color: #87ceeb; /* Bleu ciel */
+  margin-left: 20px;
+  text-align: center; /* Alignement à gauche */
+}
+
+/* Image centrée et redimensionnée */
+.references-image {
+  display: flex;
+  justify-content: center;
+}
+
+.references-image img {
+  width: 80%; /* Réduction à 80% */
+  max-width: 800px;
+  height: 400px;
+  border-radius: 8px; /* Coins arrondis */
+}
+
+/* Style pour la section Actualités */
+#actualites-section {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+/* Bannière avec une image de fond qui prend toute la section */
+#actualites-section .banner {
+  width: 100%;
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  background-image: url("image/Actu.jpg"); /* Remplacez par l'URL de votre image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: brightness(70%);
+}
+
+/* Style du texte dans la bannière */
+#actualites-section .banner h2 {
+  font-size: 48px;
+  color: white;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Wrapper pour masquer le contenu hors écran */
+#actualites-section .carousel-actualites-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+
+/* Animation infinie du carousel */
+#actualites-section .carousel-actualites {
+  display: flex;
+  gap: 20px;
+  animation: scroll 20s linear infinite;
+}
+
+#actualites-section .actu-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 300px;
+  flex: 0 0 auto;
+}
+
+#actualites-section .actu-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#actualites-section .actu-card p {
+  font-size: 16px;
+  color: #555;
+}
+
+#actualites-section .actu-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+#actualites-section .actu-card a:hover {
+  background-color: #218838;
+}
+
+/* Animation infinie du défilement */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Style général du footer */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-around; /* Espacement égal entre les colonnes */
+  align-items: flex-start; /* Aligne les éléments en haut */
+  text-align: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Adaptation aux petits écrans */
+}
+
+/* Colonnes du footer avec même taille */
+.footer-column {
+  flex: 1;
+  max-width: 300px;
+  min-width: 250px; /* Garde une taille minimale cohérente */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre le contenu horizontalement */
+}
+
+/* Uniformisation des titres */
+.footer-column h3 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #f39c12; /* Couleur orange */
+  border-bottom: 2px solid #f39c12; /* Ligne orange sous le titre */
+  width: 80%; /* Largeur uniforme pour tous les titres */
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* Liste de liens */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Occupe toute la largeur de la colonne */
+  text-align: center;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #f39c12; /* Couleur au survol */
+}
+
+/* Liens sociaux */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-links li {
+  display: inline;
+}
+
+.social-links a {
+  font-size: 16px;
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center; /* Centre les colonnes sur mobile */
+  }
+
+  .footer-column {
+    margin: 10px 0;
+  }
+}
